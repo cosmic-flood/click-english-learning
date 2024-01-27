@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vite App</title>
+  <style>
+    body {
+      width: 466px !important;
+      min-height: 500px !important;
+      background-color: aliceblue;
+      background-image: url("img_bg.jpg") !important;
+    }
+
+    #app {
+      width: 100% !important;
+    }
+
+    .top-border{
+      width:100%;
+      position:fixed;
+      top:0;
+      height:3px;
+      background-color: #00bd7e !important;
+    }
+    
+    .left-border{
+      height:100%;
+      position:fixed;
+      left:0;
+      top: 0;
+      width:3px;
+      background-color: #00bd7e !important;
+    }
+
+    .bottom-border{
+      width:100%;
+      position:fixed;
+      bottom: 0;
+      height:3px;
+      background-color: #00bd7e !important;
+    }
+
+    ::-webkit-scrollbar {
+      height: 12px;
+      width: 12px;
+      background: #00bd7e;
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #058e60;
+      -webkit-border-radius: 8px;
+      width: 8px;
+      -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.75);
+    }
+
+    ::-webkit-scrollbar-corner {
+      background: #000;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app"></div>
+  <div class="top-border"></div>
+  <div class="left-border"></div>
+  <div class="bottom-border"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

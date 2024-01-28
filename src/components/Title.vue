@@ -12,7 +12,7 @@ defineProps({
         <h1 class="green">{{ msg }}</h1>
     </a-row>
     <a-row>
-        <h2 class="green"> Such Brave Girls | Season 1 | Episode 1 </h2>
+        <h2 class="green"> Fleabag  | Season 2 | Episode 1 </h2>
     </a-row>
     <a-row>
         <strong class="green">URL: https://www.bilibili.com/video/BV1...</strong>

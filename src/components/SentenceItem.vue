@@ -17,18 +17,34 @@ export default {
     sentence: "",
     emphasized: "",
     chinese: "",
-    time: ""
+    time: "",
+    loading: false
   },
   methods: {
+    play() {
+      console.log("Props Time: " + this.time);
+      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+        var currentTab = tabs[0]; // there will be only one in this array
+        console.log("Current tab ID: ", currentTab.id);
+        chrome.runtime.sendMessage({ timeFrame: this.time, tabId: currentTab.id }, function (response) {
+          console.log("Response from background:", response);
+        });
+      });
+    }
   }
 }
 </script>
 
 <template>
   <a-col :span="24" class="sentence">
-    <a-card>
+    <a-card v-if="loading === false">
       <div class="sentence-prop">
-        <VideoCameraOutlined /> <span>{{ sentence }}</span>
+        <VideoCameraOutlined /> 
+        <span>
+          {{ sentence.split(emphasized)[0] }} 
+          <strong>{{ emphasized }}</strong>
+          {{ sentence.split(emphasized)[1] }} 
+        </span>
       </div>
       <div class="sentence-prop">
         <TranslationOutlined /> <span>{{ chinese }}</span>
@@ -37,7 +53,7 @@ export default {
         <FieldTimeOutlined /> <span>{{ time }}</span>
       </div>
       <div class="sentence-prop">
-        <a-button type="primary" :size="small">
+        <a-button type="primary" :size="small" @click="play">
           <template #icon>
             <PlayCircleOutlined />
           </template>
@@ -45,6 +61,9 @@ export default {
         </a-button>
       </div>
     </a-card>
+    <a-skeleton :loading="loading" active avatar>
+
+    </a-skeleton>
   </a-col>
 </template>
 
@@ -54,11 +73,12 @@ export default {
 
   .sentence-prop {
     margin-top: 6px;
+
     span {
       margin-left: 5px;
     }
 
-    .ant-btn-primary{
+    .ant-btn-primary {
       background-color: #00bd7e;
     }
   }

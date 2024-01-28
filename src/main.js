@@ -12,3 +12,4 @@ const app = createApp(App)
 app.use(pinia).use(Antd).mount('#app')
 
 // createApp(App).mount('#app')
+

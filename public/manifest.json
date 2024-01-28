@@ -6,5 +6,16 @@
     "action": {
         "default_popup": "index.html",
         "default_icon": "logo-backup.png"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "scripting",
+        "activeTab",
+        "storage"
+    ],
+    "content_security_policy": {
+        "extension_pages": "script-src 'self' ; object-src 'self';"
     }
 }

@@ -10,10 +10,23 @@
     "background": {
         "service_worker": "background.js"
     },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.bilibili.com/*"
+            ],
+            "run_at": "document_idle",
+            "js": [
+                "content-script.js"
+            ],
+            "css": ["content-script.css"]
+        }
+    ],
     "permissions": [
         "scripting",
         "activeTab",
-        "storage"
+        "storage",
+        "nativeMessaging"
     ],
     "content_security_policy": {
         "extension_pages": "script-src 'self' ; object-src 'self';"

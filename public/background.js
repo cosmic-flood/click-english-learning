@@ -7,7 +7,25 @@ chrome.runtime.onInstalled.addListener(({ reason }) => {
   chrome.action.setBadgeText({
     text: "",
   });
+
+  // chrome.scripting.registerContentScripts([{
+  //   id: "session-script",
+  //   js: ["content-script.js"],
+  //   matches: ["*://*.bilibili.com/*"],
+  //   runAt: "document_end",
+  // }])
+  //   .then(() => {
+  //     console.log('registratoin completed');
+  //     let videoElements = document.getElementsByTagName('video');
+  //     console.log(videoElements);
+  //     videoElements[0].addEventListener("pause", ()=>{
+  //       alert('paused')
+  //     });
+  //   })
+  //   .catch((err) => console.warn("unexpected error", err));
 });
+
+
 
 let timeFrame = {};
 

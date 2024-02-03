@@ -6,10 +6,10 @@ import Share from './components/Share.vue'
 
 <template>
   <div style="overflow:auto;">
-    <Title msg="Click, English Series Helper" />
+    <Title msg="Clickee, English Series Companion" />
     <a-row style="border-top: 1px solid white;margin-top: 5px;margin-bottom: 10px;" />
     <Sentences />
-    <Share />
+    <!-- <Share /> -->
   </div>
 </template>
 

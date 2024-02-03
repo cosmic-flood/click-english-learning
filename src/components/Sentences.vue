@@ -21,7 +21,7 @@ export default {
     };
   },
   mounted() {
-    setTimeout(this.countdown, 1300);
+    setTimeout(this.countdown, 500);
   },
   methods: {
     countdown() {
